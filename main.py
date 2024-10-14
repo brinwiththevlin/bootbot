@@ -2,9 +2,21 @@ from collections import Counter
 
 def main():
     with open("books/frankenstein.txt") as f:
-        print(text := f.read())
-    print(f"the word count is: {word_count(text)}")
-    print(char_count(text))
+        text = f.read()
+    print_report("books/frankenstein", text)
+
+
+def print_report(title: str, text: str):
+    print(f"--- Begin report of {title}\n")
+    print(f"{word_count(text)} words found in document")
+    print()
+    for k,v in char_count(text).items():
+        if k == "\n":
+            k = "\\n"
+        print(f"The '{k}' character was found {v} times")
+    print("--- End report ---")
+
+
 
 
 def word_count(text: str):
