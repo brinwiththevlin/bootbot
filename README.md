@@ -1,2 +1,2 @@
 # bootbot
-my first projcet
+my first project
