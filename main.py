@@ -12,9 +12,8 @@ def print_report(title: str, text: str):
     print(f"{word_count(text)} words found in document")
     print()
     for k, v in char_count(text).items():
-        if k == "\n":
-            k = "\\n"
-        print(f"The '{k}' character was found {v} times")
+        if k.isalpha():
+            print(f"The '{k}' character was found {v} times")
     print("--- End report ---")
 
 
